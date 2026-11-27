@@ -1,0 +1,182 @@
+
+:root {
+  --bg: #204474;
+  --card: #a5aff0;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --border: #d1d5db;
+  --error: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;               /* centers the card */
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+ 
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--card);
+  padding: 32px 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 1.7rem;
+  text-align: center; 
+  color : rgb(69, 69, 120);
+}
+
+p.myname {
+  text-align: center;
+  font-weight: bold;
+  color: rgb(174, 221, 152);
+  animation: smoothBlink 1.5s infinite;
+}
+p.myname:hover {
+  color: rgb(188, 2, 245);
+  animation: none;
+}
+
+@keyframes smoothBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+}
+p.subtitle {
+  text-align: center !important;
+  width: 100%;
+  display: block;
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: 2px solid var(--primary);
+  border-color: var(--primary);
+}
+
+.error {
+  min-height: 1.2em;
+  margin: 0 0 12px;
+  color: var(--error);
+  font-size: 0.9rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  border:#0a4a22
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background: #d1d5db;
+}
+
+.result {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f9fafb;
+  text-align: center;
+  border: 2px solid var(--border);
+}
+
+.result[hidden] {
+  display: none;
+}
+
+.result-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.bmi-value {
+  margin: 4px 0;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.bmi-category {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Category colors (JavaScript adds one of these classes) */
+.underweight { color: #0284c7; border-color: #0284c7; }
+.normal      { color: #16a34a; border-color: #16a34a; }
+.overweight  { color: #d97706; border-color: #d97706; }
+.obese       { color: #dc2626; border-color: #dc2626; }
+
+/* Small screens */
+@media (max-width: 480px) {
+  .card {
+    padding: 24px 18px;
+  }
+  .buttons {
+    flex-direction: column;
+  }
+}
